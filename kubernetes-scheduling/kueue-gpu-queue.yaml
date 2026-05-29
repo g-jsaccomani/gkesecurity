@@ -1,0 +1,21 @@
+apiVersion: kueue.x-k8s.io/v1beta1
+kind: ClusterQueue
+metadata:
+  name: secure-gpu-cluster-queue
+spec:
+  namespaceSelector: {} # Target all secure namespaces
+  cohort: secure-ai-cohort
+  resourceGroups:
+  - flavors:
+    - name: h100-gpu-flavor
+    resources:
+    - name: "nvidia.com/gpu"
+      nominalQuota: 8 # Limit to 8 active H100 cards
+---
+apiVersion: kueue.x-k8s.io/v1beta1
+kind: LocalQueue
+metadata:
+  name: secure-gpu-local-queue
+  namespace: ai-inference
+spec:
+  clusterQueue: secure-gpu-cluster-queue

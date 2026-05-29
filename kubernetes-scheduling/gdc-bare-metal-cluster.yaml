@@ -1,0 +1,24 @@
+# Hardened Google Distributed Cloud (GDC) Bare Metal User Cluster Spec
+apiVersion: baremetal.cluster.gke.io/v1
+kind: Cluster
+metadata:
+  name: edge-hardened-cluster
+  namespace: cluster-edge-prod
+spec:
+  type: user
+  profile: secure-by-default-extended
+  kubernetesVersion: 1.28.0
+  controlPlane:
+    nodePoolSpec:
+      nodes:
+      - address: 10.200.1.10
+  nodeAccess:
+    sshPrivateKeyPath: /var/keys/id_rsa_hardened # SSH credential restrictions
+  # Hardware and OS specifications
+  osEnvironment:
+    operatingSystem: RHEL
+    auditdLogging: true # Active system audit daemon logging
+  clusterNetwork:
+    flatMode: false # Island network isolation mode
+    ports:
+      kubeletReadOnlyPort: 0 # Explicitly disable read-only port 10255

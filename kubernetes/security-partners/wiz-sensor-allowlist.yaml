@@ -1,0 +1,13 @@
+# WorkloadAllowlist to permit the Wiz Sensor DaemonSet on GKE Autopilot clusters
+apiVersion: container.gke.io/v1alpha1
+kind: WorkloadAllowlist
+metadata:
+  name: wiz-runtime-sensor-allowlist
+  namespace: kube-system
+spec:
+  partner:
+    name: "Wiz"
+    allowList:
+    - daemonSet: "wiz-sensor"
+      container: "wiz-sensor"
+      privileged: true # Safely permit host kernel access on Autopilot nodes

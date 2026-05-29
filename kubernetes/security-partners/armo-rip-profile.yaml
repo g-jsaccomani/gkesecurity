@@ -1,0 +1,26 @@
+# Custom Resource Definition implementing Runtime Application Profile DNA on GKE
+apiVersion: security.armosec.io/v1beta1
+kind: ApplicationProfile
+metadata:
+  name: customer-data-agent-profile
+  namespace: payments-processing
+spec:
+  workloadSelector:
+    kind: Deployment
+    name: customer-data-agent
+  behavioralBaseline:
+    allowedSyscalls:
+    - accept
+    - bind
+    - connect
+    - epoll_wait
+    - read
+    - write
+    allowedWritePaths:
+    - "/app/runtime/cache"
+    - "/tmp"
+    allowedNetworkDestinations:
+    - "vertexai.googleapis.com"
+    - "secured-db.internal-vpc.local"
+    allowedServiceAccounts:
+    - "ksa-customer-data-agent"

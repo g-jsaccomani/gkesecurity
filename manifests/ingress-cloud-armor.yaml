@@ -1,0 +1,29 @@
+apiVersion: cloud.google.com/v1
+kind: BackendConfig
+metadata:
+  name: ingress-waf-backendconfig
+  namespace: payments-processing
+spec:
+  securityPolicy:
+    name: "enterprise-owasp-policy" # References active Google Cloud Armor policy
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: secure-gateway-ingress
+  namespace: payments-processing
+  annotations:
+    networking.gke.io/v1beta1.FrontendConfig: "ingress-frontend-config"
+    beta.cloud.google.com/backend-config: '{"default": "ingress-waf-backendconfig"}'
+spec:
+  ingressClassName: gke-l7-global-external-managed
+  rules:
+  - http:
+      paths:
+      - path: /api/v1/payments
+        pathType: Prefix
+        backend:
+          service:
+            name: transaction-router-service
+            port:
+              number: 443

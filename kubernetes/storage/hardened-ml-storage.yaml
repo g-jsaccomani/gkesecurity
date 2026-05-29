@@ -1,0 +1,10 @@
+# StorageClass establishing high-performance, CMEK-encrypted local cache for model data
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: hardened-hyperdisk-ml-cmek
+provisioner: pd.csi.storage.gke.io
+volumeBindingMode: WaitForFirstConsumer
+parameters:
+  type: hyperdisk-ml # Optimized storage class for fast AI/ML model loading
+  disk-encryption-key: "projects/kms-security-project/locations/us-central1/keyRings/hsm-ring/cryptoKeys/model-weight-key"

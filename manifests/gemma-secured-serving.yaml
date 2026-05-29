@@ -1,0 +1,30 @@
+# Model Armor deployment manifest running as an inline proxy sidecar within GKE Serving Pods
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gemma-secured-serving
+  namespace: ai-inference
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: gemma-serving
+  template:
+    metadata:
+      labels:
+        app: gemma-serving
+    spec:
+      containers:
+      - name: model-armor-proxy
+        image: gcr.io/gke-secure-ai/model-armor-sidecar:v1.0
+        ports:
+        - containerPort: 8080
+        env:
+        - name: PROJECT_ID
+          value: "enterprise-ai-production"
+        - name: MODEL_ARMOR_POLICY
+          value: "projects/enterprise-ai-production/locations/global/modelArmorPolicies/strict-prod-policy"
+      - name: llm-engine
+        image: us-central1-docker.pkg.dev/enterprise-project/vetted-ai/vllm-serving:v1.2
+        ports:
+        - containerPort: 8000

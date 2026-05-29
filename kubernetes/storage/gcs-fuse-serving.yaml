@@ -1,0 +1,32 @@
+# GKE Pod utilizing Cloud Storage FUSE with strict read-only model mounting
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: secured-gemma-inference
+  namespace: ai-inference
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: gemma-serving
+  template:
+    metadata:
+      annotations:
+        gke-gcsview.gke.io/mount: "true" # Enable native FUSE mount sidecar
+        gke-gcsview.gke.io/bucket: "secured-enterprise-models"
+      labels:
+        app: gemma-serving
+    spec:
+      serviceAccountName: ksa-gemma-serving
+      containers:
+      - name: inference-engine
+        image: us-central1-docker.pkg.dev/enterprise-project/vetted-ai/vllm-serving:v1.2
+        volumeMounts:
+        - name: gcs-mount-volume
+          mountPath: /models
+          readOnly: true # Prevent runtime model poisoning
+      volumes:
+      - name: gcs-mount-volume
+        csi:
+          driver: gcsfuse.csi.storage.gke.io
+          readOnly: true

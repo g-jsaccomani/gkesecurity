@@ -1,0 +1,11 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: default-deny-all
+  namespace: payments-processing
+spec:
+  podSelector: {} # Select all pods in the namespace
+  policyTypes:
+  - Ingress
+  - Egress
+  # Empty ingress/egress blocks all network flows
