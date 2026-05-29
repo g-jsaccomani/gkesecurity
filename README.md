@@ -1,8 +1,7 @@
-# gkesecurity
-created by @jsaccomani
-Google Cloud PSO LatAm
+# GKE Security Hardening &amp; Zero-Trust Git Repository
 
-GKE Security Hardening &amp; Zero-Trust Git Repository
+created by @jsaccomani
+Google Cloud PSO AI & Infra Security LatAm
 
 # Hardened GKE Standard & AI Workload Security Baseline
 ## Platform + GKE Security Triad Greenfield Cloud Migration
