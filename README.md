@@ -3,8 +3,8 @@
 created by @jsaccomani
 Google Cloud PSO AI & Infra Security LatAm
 
-# Hardened GKE Standard & AI Workload Security Baseline
-## Platform + GKE Security Triad Greenfield Cloud Migration
+## Hardened GKE Standard & AI Workload Security Baseline
+### Platform + GKE Security Triad Greenfield Cloud Migration
 
 This repository houses the GitOps-compliant IaC and Kubernetes manifests implementing the "hardened-by-default" security baseline for our enterprise multi-tenant cloud platform.
 
