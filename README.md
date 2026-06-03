@@ -1,6 +1,9 @@
 # GKE Security Hardening & Zero-Trust Git Repository
 ## Platform + GKE + GCVE Security Triad Greenfield Cloud Migration
 
+created by @jsaccomani Google Cloud PSO AI & Infra Security LatAm
+Copyright (c) 2026 Joabson Saccomani. All rights reserved.
+
 This repository contains the complete, production-ready, fully unified directory layout, documentation (`README.md`), and declarative configurations (Terraform HCL & Kubernetes YAML manifests) representing the **Enterprise Platform Golden Security Baseline**.
 
 Designed to meet strict regulatory audits including **CIS GKE Benchmark v1.9.0**, **PCI-DSS v4.0 (CDE)**, and **NIST CSF 2.0**, this architecture establishes strong physical, logical, and semantic isolation across GKE clusters.
@@ -9,7 +12,7 @@ This repository explicitly integrates critical enterprise tooling: **Wiz** (AI-S
 
 ---
 
-## 🏛️ Enterprise Multi-Tenant Architecture & Data Flow
+## Enterprise Multi-Tenant Architecture & Data Flow
 
 This platform is structured on an identity-first, micro-segmented network fabric that restricts East-West lateral movement and enforces build-to-runtime integrity.
 
@@ -99,7 +102,7 @@ gke-security-hardening-baseline/
 
 ---
 
-## 🛠️ Security Topics & Architectural Deep-Dives
+## Security Topics & Architectural Deep-Dives
 
 The baseline enforces **26 integrated security topics**, organized across GKE and Google Cloud's native defense-in-depth security layers:
 
@@ -209,7 +212,7 @@ The baseline enforces **26 integrated security topics**, organized across GKE an
 
 ---
 
-## 🚀 Bootstrap & Orchestration Sequence
+## Bootstrap & Orchestration Sequence
 
 Follow this declarative sequence to provision and harden the target environment:
 
@@ -252,7 +255,7 @@ chmod +x bootstrap.sh
 
 ---
 
-## 🔍 Verification & Troubleshooting Commands
+## Verification & Troubleshooting Commands
 
 ### 1. GKE Dataplane V2 (Cilium/eBPF) Verification
 Validate that GKE Dataplane V2 network policies are active and parsing kernel-level connection drops:
