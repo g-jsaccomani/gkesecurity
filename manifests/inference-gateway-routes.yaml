@@ -1,4 +1,3 @@
-# GKE Inference Gateway routing configuration maximizing cache hits
 apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:
@@ -18,7 +17,7 @@ spec:
     - type: ExtensionRef
       extensionRef:
         group: networking.gke.io
-        kind: GCAIPPolicy # Google Cloud AI Policy for prefix-cache-aware routing
+        kind: GCAIPPolicy
         name: prefix-cache-aware-policy
     backendRefs:
     - group: ""
