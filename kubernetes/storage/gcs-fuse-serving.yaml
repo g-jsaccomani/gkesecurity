@@ -1,4 +1,3 @@
-# GKE Pod utilizing Cloud Storage FUSE with strict read-only model mounting
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -12,7 +11,7 @@ spec:
   template:
     metadata:
       annotations:
-        gke-gcsview.gke.io/mount: "true" # Enable native FUSE mount sidecar
+        gke-gcsview.gke.io/mount: "true"
         gke-gcsview.gke.io/bucket: "secured-enterprise-models"
       labels:
         app: gemma-serving
@@ -24,7 +23,7 @@ spec:
         volumeMounts:
         - name: gcs-mount-volume
           mountPath: /models
-          readOnly: true # Prevent runtime model poisoning
+          readOnly: true
       volumes:
       - name: gcs-mount-volume
         csi:

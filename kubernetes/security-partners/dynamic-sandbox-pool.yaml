@@ -1,11 +1,10 @@
-# SandboxTemplate defining the kernel-isolated gVisor runtime for dynamic agent codes
 apiVersion: agents.x-k8s.io/v1alpha1
 kind: SandboxTemplate
 metadata:
   name: dynamic-agent-sandbox-template
   namespace: ai-inference
 spec:
-  runtimeClassName: gvisor # Mandates user-space kernel virtualization
+  runtimeClassName: gvisor
   template:
     spec:
       containers:
@@ -19,13 +18,12 @@ spec:
             drop:
             - ALL
 ---
-# SandboxWarmPool to eliminate cold-start latency for real-time code execution
 apiVersion: agents.x-k8s.io/v1alpha1
 kind: SandboxWarmPool
 metadata:
   name: adk-agent-warm-pool
   namespace: ai-inference
 spec:
-  size: 30 # Maintain 30 warm gVisor sandboxes ready for sub-second execution
+  size: 30
   templateRef:
     name: dynamic-agent-sandbox-template

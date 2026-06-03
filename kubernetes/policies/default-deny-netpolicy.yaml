@@ -4,8 +4,7 @@ metadata:
   name: default-deny-all
   namespace: payments-processing
 spec:
-  podSelector: {} # Select all pods in the namespace
+  podSelector: {}
   policyTypes:
   - Ingress
   - Egress
-  # Empty ingress/egress blocks all network flows

@@ -3,6 +3,5 @@ kind: Namespace
 metadata:
   name: ai-inference
   labels:
-    # Standard security baseline for AI-workload namespaces
     pod-security.kubernetes.io/enforce: baseline
     pod-security.kubernetes.io/enforce-version: latest

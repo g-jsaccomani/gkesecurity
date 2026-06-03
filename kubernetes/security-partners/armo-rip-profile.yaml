@@ -1,4 +1,3 @@
-# Custom Resource Definition implementing Runtime Application Profile DNA on GKE
 apiVersion: security.armosec.io/v1beta1
 kind: ApplicationProfile
 metadata:

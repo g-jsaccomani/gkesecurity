@@ -1,0 +1,32 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: mutate-pod-security-hardening
+  annotations:
+    policies.kyverno.io/title: "Auto-mutate and Harden Pod Security Contexts"
+    policies.kyverno.io/subject: "Pod, SecurityContext"
+    policies.kyverno.io/description: "Injects runAsNonRoot, allowPrivilegeEscalation, readOnlyRootFilesystem, and drops ALL capabilities."
+spec:
+  rules:
+  - name: mutate-security-context
+    match:
+      any:
+      - resources:
+          kinds:
+          - Pod
+          namespaces:
+          - payments-processing
+    mutate:
+      foreach:
+      - list: "request.object.spec.containers"
+        patchStrategicMerge:
+          spec:
+            containers:
+            - name: "{{ element.name }}"
+              securityContext:
+                runAsNonRoot: true
+                allowPrivilegeEscalation: false
+                readOnlyRootFilesystem: true
+                capabilities:
+                  drop:
+                  - ALL
