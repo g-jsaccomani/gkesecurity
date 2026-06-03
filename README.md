@@ -214,3 +214,5 @@ roleRef:
   name: cluster-admin
   apiGroup: rbac.authorization.k8s.io
 ```
+
+Copyright (c) 2026 Joabson Saccomani. All rights reserved.
