@@ -1,8 +1,8 @@
 # GKE Security Hardening & Zero-Trust Git Repository
 ## Platform + GKE + GCVE Security Triad Greenfield Cloud Migration
 
-```text created by @jsaccomani Google Cloud PSO AI & Infra Security LatAm ```
-```text Copyright (c) 2026 Joabson Saccomani. All rights reserved. ```
+* ```created by @jsaccomani Google Cloud PSO AI & Infra Security LatAm ```
+* ```Copyright (c) 2026 Joabson Saccomani. All rights reserved. ```
 
 This repository contains the complete, production-ready, fully unified directory layout, documentation (`README.md`), and declarative configurations (Terraform HCL & Kubernetes YAML manifests) representing the **Enterprise Platform Golden Security Baseline**.
 
