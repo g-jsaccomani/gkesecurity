@@ -1,21 +1,19 @@
 # Security Policy
 
+This project prioritizes security. If you find any vulnerability, please report it privately so I can fix it before it becomes public.
+
 ## Supported Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
-
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+As this is a personal/consulting project, only the latest version (`latest`) receives security patches.
 
 ## Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
+Do not open public issues for security vulnerabilities.
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+Please send an email to: **jsaccomani@google.com**
+
+*   Describe the problem clearly.
+*   Include steps to reproduce the flaw.
+*   If possible, suggest a fix or mitigation.
+
+I greatly appreciate the community's effort in keeping this project secure.
