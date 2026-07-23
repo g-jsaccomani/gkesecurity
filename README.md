@@ -296,3 +296,5 @@ Confirm GKE audit events are reaching the BigQuery analytical dataset:
 ```bash
 bq query --use_legacy_sql=false 'SELECT timestamp, logName, protoPayload.methodName FROM `'$PROJECT_ID'.gke_security_audit_logs.cloudaudit_googleapis_com_data_access_*` LIMIT 10'
 ```
+
+# created by @jsaccomani

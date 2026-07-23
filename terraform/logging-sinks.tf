@@ -22,3 +22,5 @@ resource "google_pubsub_topic_iam_member" "pubsub_publisher" {
   member  = google_logging_folder_sink.aggregated_cortex_sink.writer_identity
   project = var.project_id
 }
+
+# created by @jsaccomani

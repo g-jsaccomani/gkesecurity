@@ -23,3 +23,5 @@ variable "folder_id" {
   type        = string
   description = "The Organization Folder ID for aggregated SIEM logging"
 }
+
+# created by @jsaccomani

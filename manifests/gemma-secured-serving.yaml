@@ -27,3 +27,5 @@ spec:
         image: us-central1-docker.pkg.dev/enterprise-project/vetted-ai/vllm-serving:v1.2
         ports:
         - containerPort: 8000
+
+# created by @jsaccomani

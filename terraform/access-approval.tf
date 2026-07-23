@@ -14,3 +14,5 @@ resource "google_essential_contacts_contact" "security_contact" {
   language_tag        = "en"
   notification_category_subscriptions = ["SECURITY", "TECHNICAL"]
 }
+
+# created by @jsaccomani

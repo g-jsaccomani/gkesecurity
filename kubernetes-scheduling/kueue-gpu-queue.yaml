@@ -19,3 +19,5 @@ metadata:
   namespace: ai-inference
 spec:
   clusterQueue: secure-gpu-cluster-queue
+
+# created by @jsaccomani

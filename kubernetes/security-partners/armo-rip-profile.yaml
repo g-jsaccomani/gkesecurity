@@ -23,3 +23,5 @@ spec:
     - "secured-db.internal-vpc.local"
     allowedServiceAccounts:
     - "ksa-customer-data-agent"
+
+# created by @jsaccomani

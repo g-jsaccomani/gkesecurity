@@ -66,3 +66,5 @@ kubectl apply -f kubernetes/gitops/argocd-application.yaml
 echo "=========================================================="
 echo "Greenfield GKE Security Hardening Bootstrap Completed!"
 echo "=========================================================="
+
+# created by @jsaccomani

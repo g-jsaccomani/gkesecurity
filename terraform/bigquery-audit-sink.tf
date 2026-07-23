@@ -24,3 +24,5 @@ resource "google_project_iam_member" "bigquery_sink_writer" {
   role    = "roles/bigquery.dataEditor"
   member  = google_logging_project_sink.bigquery_security_sink.writer_identity
 }
+
+# created by @jsaccomani

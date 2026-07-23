@@ -25,3 +25,5 @@ resource "google_kms_crypto_key" "registry_key" {
     protection_level = "HSM"
   }
 }
+
+# created by @jsaccomani

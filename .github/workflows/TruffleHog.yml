@@ -17,3 +17,5 @@ jobs:
         uses: trufflesecurity/trufflehog@main
         with:
           extra_args: --results=verified,unknown
+
+# created by @jsaccomani

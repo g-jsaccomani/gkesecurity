@@ -21,3 +21,5 @@ spec:
     syncOptions:
     - CreateNamespace=true
     - ApplyOutOfSyncOnly=true
+
+# created by @jsaccomani

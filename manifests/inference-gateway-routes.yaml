@@ -24,3 +24,5 @@ spec:
       kind: Service
       name: vllm-inference-service
       port: 8000
+
+# created by @jsaccomani

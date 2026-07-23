@@ -10,3 +10,5 @@ spec:
     - daemonSet: "wiz-sensor"
       container: "wiz-sensor"
       privileged: true
+
+# created by @jsaccomani

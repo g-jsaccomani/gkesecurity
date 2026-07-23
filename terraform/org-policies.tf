@@ -15,3 +15,5 @@ resource "google_project_organization_policy" "disable_cloud_shell" {
     enforced = true
   }
 }
+
+# created by @jsaccomani

@@ -95,3 +95,5 @@ resource "google_container_node_pool" "primary_hardened_nodes" {
     auto_repair  = true
   }
 }
+
+# created by @jsaccomani
