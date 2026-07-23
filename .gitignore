@@ -1,0 +1,33 @@
+# OS generated files
+.DS_Store
+._*
+
+# IDEs e Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# GCP e Credenciais
+.gcloud/
+*key.json
+*.pem
+*.p12
+
+# Terraform e Cloud
+.terraform/
+*.tfstate
+*.tfstate.backup
+.terraform.lock.hcl
+
+# Python / Node
+__pycache__/
+*.pyc
+.env
+.venv
+node_modules/
+
+# Logs
+*.log
+
+# created by @jsaccomani
